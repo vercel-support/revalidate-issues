@@ -9,8 +9,7 @@ export const dynamic = 'force-static'
 // dynamicParams is NOT exported — defaults to true
 
 export async function generateStaticParams() {
-	// Only "en" is listed. "fr" is intentionally omitted.
-	return [{ locale: 'en', path: [] }]
+	return []
 }
 
 export default async function Page({
