@@ -1,7 +1,11 @@
 // Reproduce: optional catch-all [[...path]] revalidation issue with empty path
 
 export const revalidate = false
-export const dynamic = 'error'
+
+// https://nextjs.org/docs/app/api-reference/functions/generate-static-params
+// You must return an empty array from generateStaticParams or utilize export const dynamic = 'force-static' in order to revalidate (ISR) paths at runtime.
+export const dynamic = 'force-static'
+
 // dynamicParams is NOT exported — defaults to true
 
 export async function generateStaticParams() {
