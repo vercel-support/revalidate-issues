@@ -10,11 +10,8 @@ export async function POST(request: Request) {
 	}
 
 	console.log(`[revalidate] revalidatePath('${path}')`)
-	if (path.split('/').length < 3) {
-		revalidatePath(path, 'page')
-	} else {
-		revalidatePath(path)
-	}
+	
+	revalidatePath(path)
 
 	return NextResponse.json({ revalidated: true, path, time: new Date().toISOString() })
 }
